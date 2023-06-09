@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Sequences table</title>
+  </head>
+  <body>
+    <div><a href="/">home</a></div>
+    {{ df|safe }}
+    <div class="sequences-compare">
+      <div class="sequence-compare__result"></div>
+      <button class="sequence-compare__button">
+        Compare selected sequences
+      </button>
+    </div>
+    <script>
+      const trs = Array.from(document.querySelectorAll("tr"));
+      trs.forEach((tr) => {
+        const checkBoxTd = document.createElement("td");
+        const checkbox = document.createElement("INPUT");
+        checkbox.setAttribute("type", "checkbox");
+        checkbox.setAttribute("class", "sequence-checkbox");
+        checkBoxTd.appendChild(checkbox);
+        tr.appendChild(checkBoxTd);
+      });
+
+      // logika od porownywania sekwencji
+      const sequencesComparerResult = document.getElementsByClassName(
+        "sequence-compare__result"
+      )[0];
+      const sequencesComparerButton = document.getElementsByClassName(
+        "sequence-compare__button"
+      )[0];
+
+      sequencesComparerButton.addEventListener("click", function () {
+        sequencesComparerResult.innerHTML = "";
+        const checkedCheckboxes = document.querySelectorAll(
+          ".sequence-checkbox:checked"
+        );
+        if (checkedCheckboxes.length !== 2) {
+          const error = document.createElement("p");
+          const errorText = document.createTextNode(
+            `You must select exact two elements! You selected ${checkedCheckboxes.length} elements.`
+          );
+          error.appendChild(errorText);
+          sequencesComparerResult.appendChild(error);
+        } else {
+          const trs = document.querySelectorAll("tr");
+          const checkedIndexes = [];
+          for (let i = 0; i < trs.length; i++) {
+            const lastTd = trs[i].lastChild;
+            const checkbox = lastTd.lastChild;
+            if (checkbox.checked) {
+              checkedIndexes.push(i);
+            }
+          }
+          const sequences = [];
+          for (let i = 0; i < checkedIndexes.length; i++) {
+            const sequenceTd = document.querySelector(
+              `table tr:nth-child(${checkedIndexes[i]}) > td:nth-child(3)`
+            );
+            const sequence = sequenceTd.lastChild;
+            sequences.push(sequence);
+          }
+
+          const longerSequenceIndex =
+            sequences[0].length > sequences[1].length ? 0 : 1;
+
+          const longerSequence =
+            sequences[longerSequenceIndex].textContent.toUpperCase();
+          const shorterSequence =
+            longerSequenceIndex === 0
+              ? sequences[1].textContent.toUpperCase()
+              : sequences[0].textContent.toUpperCase();
+
+          const table = document.createElement("table");
+          const tbody = document.createElement("tbody");
+          table.appendChild(tbody);
+
+          const longerSequenceTr = document.createElement("tr");
+          const compareSequenceTr = document.createElement("tr");
+          const shorterSeqeunceTr = document.createElement("tr");
+          tbody.appendChild(longerSequenceTr);
+          tbody.appendChild(compareSequenceTr);
+          tbody.appendChild(shorterSeqeunceTr);
+
+          longerSequence.split("").forEach((char, index) => {
+            const longerSequenceTd = document.createElement("td");
+            const longerCharText = document.createTextNode(char);
+            longerSequenceTd.appendChild(longerCharText);
+            longerSequenceTr.appendChild(longerSequenceTd);
+
+            const compareSequenceTd = document.createElement("td");
+            const compareText = document.createTextNode(
+              char === shorterSequence[index] ? "+" : "-"
+            );
+            compareSequenceTd.appendChild(compareText);
+            compareSequenceTr.appendChild(compareSequenceTd);
+
+            const shorterSequenceTd = document.createElement("td");
+            const shorterCharText = document.createTextNode(
+              shorterSequence[index] || "-"
+            );
+            shorterSequenceTd.appendChild(shorterCharText);
+            shorterSeqeunceTr.appendChild(shorterSequenceTd);
+          });
+
+          sequencesComparerResult.appendChild(table);
+        }
+      });
+    </script>
+  </body>
+</html>
