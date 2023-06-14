@@ -5,19 +5,59 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>home</title>
+    <style>
+      /* Stylizacja odnośników jako przyciski */
+      .button-container {
+        text-align: center;
+        margin-top: 20px;
+      }
+
+      .button {
+        display: inline-block;
+        padding: 10px 20px;
+        margin: 0 10px;
+        background-color: #4682b4;
+        color: #fff;
+        text-decoration: none;
+        border-radius: 5px;
+        box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.3);
+        transition: background-color 0.3s ease;
+        text-transform: uppercase;
+        font-family: sans-serif;
+      }
+
+      .button:hover {
+        background-color: #35648d;
+      }
+
+      .info-button {
+        background-color: #808080;
+      }
+
+      .info-button:hover {
+        background-color: #666666;
+      }
+    </style>
   </head>
   <body>
-    <div>
-      <a href="/admin">admin panel</a>
+    <!-- <div>
+      <a href="/admin" class="button">admin panel</a>
     </div>
     <div>
-      <a href="/dog">dogs</a>
+      <a href="/dog" class="button">dogs</a>
     </div>
     <div>
-      <a href="/cat">cats</a>
+      <a href="/cat" class="button">cats</a>
     </div>
     <div>
-      <a href="/other">others</a>
+      <a href="/other" class="button">others</a>
+    </div> -->
+    <div class="button-container">
+      <a href="/" class="button">home</a>
+      <a href="/dog" class="button">dogs</a>
+      <a href="/cat" class="button">cats</a>
+      <a href="/other" class="button">others</a>
+      <a href="/info" class="button info-button">info</a>
     </div>
   </body>
 </html>
