@@ -22,3 +22,7 @@ następnie należy uruchomić stronę http://localhost:8000/admin/ na której mo
 Następnie po kliknięciu w View Site zobaczymy wizualizację w postaci podstron zawierających tabelę z informacjami na temat sekwencji
 
 ![image](https://github.com/MilenaJasiolek/Sequencer/assets/125980721/791a9550-6f1a-45ff-8464-7904074cde35)
+
+Ponadto możemy porównywać dopasowanie między sekwencjami, należy do tego zaznaczyć dwie sekwencje i wcisnąć przycisk "Compare selected sequences"
+![image](https://github.com/MilenaJasiolek/Sequencer/assets/125980721/63f250b4-ec14-42d1-b705-24343542aa76)
+
