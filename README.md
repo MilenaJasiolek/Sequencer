@@ -16,8 +16,9 @@ python manage.py runserver
 
 następnie należy uruchomić stronę http://localhost:8000/admin/ na której można dodawać i usuwać sekwencje dla gatunków
 ![image](https://github.com/MilenaJasiolek/Sequencer/assets/125980721/c4b1f4c0-4bb8-4bb3-b3b5-7dedbdfe17d7)
-![image](https://github.com/MilenaJasiolek/Sequencer/assets/125980721/4b475b01-3420-4f14-bd62-c20114867161)
+
+![image](https://github.com/MilenaJasiolek/Sequencer/assets/125980721/1e735dee-7658-4862-83f9-24a6e325e676)
 
 Następnie po kliknięciu w View Site zobaczymy wizualizację w postaci podstron zawierających tabelę z informacjami na temat sekwencji
 
-![image](https://github.com/MilenaJasiolek/Sequencer/assets/125980721/de2623fc-9f55-4bf2-b559-217805dd12b3)
+![image](https://github.com/MilenaJasiolek/Sequencer/assets/125980721/791a9550-6f1a-45ff-8464-7904074cde35)
