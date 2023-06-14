@@ -5,7 +5,7 @@ import pandas as pd
 
 def home(request):
     return render(request,'home.html')
-# create views
+# Create views
 def dog(request):
     dogItems = Sequencer.objects.filter(species="dog").values();
     df = createPandasTable(pd.DataFrame(dogItems))
