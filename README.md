@@ -1,28 +1,31 @@
 # Sequencer - Django
 
-Projekt Django, który wykorzystuje bibliotekę Pandas do analizy sekwencji DNA i renderuje proste podstrony z tabelami sekwencji w przeglądarce.
+This is a Django project that uses the Pandas library for DNA sequence analysis and renders simple web pages with sequence tables in the browser. JavaScript is also used in this project.
 
-## Wymagania
+## Requirements
 
-Aby uruchomić ten projekt, musisz mieć zainstalowane następujące elementy:
+To run this project, you need to have the following installed:
 
-- Python 
-- Django 
-- Pandas 
+- Python
 
-Po zainstalowaniu tych narzędzi, należy użyć komendy
+- Django
+  pip install django
 
-python manage.py runserver
+- Pandas
+  pip install pandas
 
-następnie należy uruchomić stronę http://localhost:8000/admin/ na której można dodawać i usuwać sekwencje dla gatunków
+After installing these tools, use the following command to run the project:
+
+python(3) [py - Linux/Mac] manage.py runserver
+
+Then, you can access the website at http://localhost:8000/admin/ where you can add and remove sequences for different species.
 ![image](https://github.com/MilenaJasiolek/Sequencer/assets/125980721/c4b1f4c0-4bb8-4bb3-b3b5-7dedbdfe17d7)
 
 ![image](https://github.com/MilenaJasiolek/Sequencer/assets/125980721/1e735dee-7658-4862-83f9-24a6e325e676)
 
-Następnie po kliknięciu w View Site zobaczymy wizualizację w postaci podstron zawierających tabelę z informacjami na temat sekwencji
+Clicking on "View Site" will show you visualizations in the form of subpages containing tables with sequence information.
 
 ![image](https://github.com/MilenaJasiolek/Sequencer/assets/125980721/791a9550-6f1a-45ff-8464-7904074cde35)
 
-Ponadto możemy porównywać dopasowanie między sekwencjami, należy do tego zaznaczyć dwie sekwencje i wcisnąć przycisk "Compare selected sequences"
+Additionally, you can compare the alignment between sequences by selecting two sequences and clicking the "Compare selected sequences" button.
 ![image](https://github.com/MilenaJasiolek/Sequencer/assets/125980721/63f250b4-ec14-42d1-b705-24343542aa76)
-

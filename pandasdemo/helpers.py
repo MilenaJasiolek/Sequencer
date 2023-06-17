@@ -1,3 +1,7 @@
+# The function createPandasTable takes a DataFrame named 'df' as an argument from the Pandas library. 
+# The function removes the 'id' column from the DataFrame, adds a 'sequence_length' column containing 
+# the length of each sequence in the 'sequence' column, and then creates additional columns that represent 
+# the percentage occurrence of specific characters (A, G, C, T, U) in the sequences.
 def createPandasTable(df):
     df = df.drop(columns=['id'])
     df['sequence_length'] = df['sequence'].apply(len)
