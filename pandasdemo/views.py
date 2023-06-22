@@ -11,7 +11,7 @@ def dog(request):
     dogItems = Sequencer.objects.filter(species="dog").values();
     if not dogItems:  # Check if dogItems is empty
         return render(request, 'error.html', {'message': 'No dog records found.'})
-        df = createPandasTable(pd.DataFrame(dogItems))
+    df = createPandasTable(pd.DataFrame(dogItems))
     mydict={
         "df": df.to_html()
     }
