@@ -6,13 +6,13 @@ This is a Django project that uses the Pandas library for DNA sequence analysis 
 
 To run this project, you need to have the following installed:
 
-- Python
+- Python (and pip)
 
 - Django
-  pip install django
+  (pip install django)
 
 - Pandas
-  pip install pandas
+  (pip install pandas)
 
 After installing these tools, use the following command to run the project:
 
